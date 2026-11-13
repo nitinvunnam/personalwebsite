@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal homepage of Nitin Vunnam.">
+  <title>Nitin Vunnam</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f9f8f4;
+      --ink: #222320;
+      --muted: #5d6059;
+      --rule: #dcded5;
+      --accent: #315c43;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      width: min(100% - 3rem, 58rem);
+      min-height: 100svh;
+      margin-inline: auto;
+    }
+
+    header, footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 1.5rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    header { border-bottom: 1px solid var(--rule); }
+    footer { border-top: 1px solid var(--rule); }
+
+    .monogram {
+      display: grid;
+      width: 2.55rem;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      color: var(--ink);
+      font-size: .75rem;
+      font-weight: 650;
+      letter-spacing: .04em;
+    }
+
+    main {
+      display: grid;
+      align-items: center;
+      flex: 1;
+      padding-block: clamp(5rem, 15vh, 10rem);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3rem, 10.3vw, 7.25rem);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: 1;
+    }
+
+    p {
+      margin: 1.45rem 0 2rem;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 600;
+      text-underline-offset: .27em;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+
+    .work-link { display: inline-flex; align-items: baseline; gap: .45rem; }
+    .work-link span { text-decoration: none; }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #181a17;
+        --ink: #f1f0e8;
+        --muted: #b3b6aa;
+        --rule: #383c33;
+        --accent: #a9cfab;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="monogram" aria-hidden="true">NV</span>
+      <a href="https://github.com/nitinvunnam">GitHub</a>
+    </header>
+    <main>
+      <div>
+        <h1>Nitin Vunnam</h1>
+        <p>Take a look at what I’m working on.</p>
+        <a class="work-link" href="https://github.com/nitinvunnam?tab=repositories">View projects <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </main>
+    <footer><span>&copy; Nitin Vunnam</span></footer>
+  </div>
+</body>
+</html>
