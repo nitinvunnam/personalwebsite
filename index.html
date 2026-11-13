@@ -119,6 +119,10 @@
 
     .pending-link { color: var(--muted); }
 
+    .contact { margin-top: 2.75rem; }
+    .contact h2 { margin: 0; font-size: 1rem; }
+    .contact p { margin: .4rem 0 0; font-size: 1rem; overflow-wrap: anywhere; }
+
     @media (prefers-color-scheme: dark) {
       :root {
         color-scheme: dark;
@@ -135,7 +139,7 @@
   <div class="page">
     <header>
       <span class="monogram" aria-hidden="true">NV</span>
-      <span class="linkedin" role="img" aria-label="LinkedIn"><span aria-hidden="true">in</span></span>
+      <a class="linkedin" href="https://www.linkedin.com/in/nitin-vunnam/" aria-label="LinkedIn"><span aria-hidden="true">in</span></a>
     </header>
     <main>
       <div>
@@ -143,9 +147,12 @@
         <p>Take a look at what I’m working on and what I’ve done.</p>
         <nav class="links" aria-label="Personal links">
           <span class="pending-link">Resume</span>
-          <span class="pending-link">Email</span>
           <a href="https://github.com/nitinvunnam">GitHub</a>
         </nav>
+        <section class="contact" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Contact</h2>
+          <p>nitinvunnam06[at]gmail[dot]com</p>
+        </section>
       </div>
     </main>
     <footer><span>&copy; Nitin Vunnam</span></footer>
