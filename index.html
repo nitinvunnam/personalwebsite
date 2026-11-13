@@ -91,8 +91,33 @@
     a:hover { text-decoration-thickness: 2px; }
     a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 
-    .work-link { display: inline-flex; align-items: baseline; gap: .45rem; }
-    .work-link span { text-decoration: none; }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem 1.5rem;
+    }
+
+    .linkedin {
+      display: grid;
+      width: 2.75rem;
+      height: 2.75rem;
+      place-items: center;
+      text-decoration: none;
+    }
+
+    .linkedin span {
+      display: grid;
+      width: 1.4rem;
+      height: 1.4rem;
+      place-items: center;
+      border-radius: .2rem;
+      background: var(--accent);
+      color: var(--paper);
+      font-size: .85rem;
+      font-weight: 750;
+    }
+
+    .pending-link { color: var(--muted); }
 
     @media (prefers-color-scheme: dark) {
       :root {
@@ -110,13 +135,17 @@
   <div class="page">
     <header>
       <span class="monogram" aria-hidden="true">NV</span>
-      <a href="https://github.com/nitinvunnam">GitHub</a>
+      <span class="linkedin" role="img" aria-label="LinkedIn"><span aria-hidden="true">in</span></span>
     </header>
     <main>
       <div>
         <h1>Nitin Vunnam</h1>
-        <p>Take a look at what I’m working on.</p>
-        <a class="work-link" href="https://github.com/nitinvunnam?tab=repositories">View projects <span aria-hidden="true">&#8599;</span></a>
+        <p>Take a look at what I’m working on and what I’ve done.</p>
+        <nav class="links" aria-label="Personal links">
+          <span class="pending-link">Resume</span>
+          <span class="pending-link">Email</span>
+          <a href="https://github.com/nitinvunnam">GitHub</a>
+        </nav>
       </div>
     </main>
     <footer><span>&copy; Nitin Vunnam</span></footer>
