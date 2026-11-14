@@ -66,10 +66,29 @@
       padding-block: clamp(5rem, 15vh, 10rem);
     }
 
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) clamp(9rem, 19vw, 13rem);
+      align-items: start;
+      gap: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .portrait {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: .5rem;
+    }
+
+    @media (max-width: 40rem) {
+      .hero { grid-template-columns: 1fr; }
+      .portrait { width: min(10rem, 100%); }
+    }
+
     h1 {
       margin: 0;
       font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(3rem, 10.3vw, 7.25rem);
+      font-size: clamp(3rem, 8.5vw, 7.25rem);
       font-weight: 400;
       letter-spacing: -.065em;
       line-height: 1;
@@ -135,8 +154,13 @@
     </header>
     <main>
       <div>
-        <h1>Nitin Vunnam</h1>
-        <p class="affiliation">Electrical and Computer Engineering @ UT Austin</p>
+        <div class="hero">
+          <div>
+            <h1>Nitin Vunnam</h1>
+            <p class="affiliation">Electrical and Computer Engineering @ UT Austin</p>
+          </div>
+          <img class="portrait" src="./portrait.jpg" alt="Portrait of Nitin Vunnam" width="800" height="800">
+        </div>
         <p>Take a look at what I’m working on and what I’ve done.</p>
         <nav class="links" aria-label="Personal links">
           <a href="./Nitin_Vunnam_resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (opens in a new tab)">Resume <span aria-hidden="true">&#8599;</span></a>
