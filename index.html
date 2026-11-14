@@ -26,10 +26,7 @@
     }
 
     .page {
-      display: flex;
-      flex-direction: column;
       width: min(100% - 3rem, 58rem);
-      min-height: 100svh;
       margin-inline: auto;
     }
 
@@ -60,20 +57,26 @@
     }
 
     main {
-      display: grid;
-      align-items: center;
-      flex: 1;
-      padding-block: clamp(5rem, 15vh, 10rem);
+      padding-block: clamp(2.5rem, 6vw, 5rem) 1.75rem;
     }
 
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) clamp(9rem, 19vw, 13rem);
+      grid-template-areas:
+        "heading portrait"
+        "details portrait";
+      grid-template-rows: auto 1fr;
       align-items: start;
-      gap: clamp(1.5rem, 4vw, 3rem);
+      column-gap: clamp(1.5rem, 4vw, 3rem);
+      row-gap: 1.25rem;
     }
 
+    .heading { grid-area: heading; }
+    .details { grid-area: details; }
+
     .portrait {
+      grid-area: portrait;
       display: block;
       width: 100%;
       height: auto;
@@ -81,7 +84,11 @@
     }
 
     @media (max-width: 40rem) {
-      .hero { grid-template-columns: 1fr; }
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-areas: "heading" "portrait" "details";
+        grid-template-rows: auto;
+      }
       .portrait { width: min(10rem, 100%); }
     }
 
@@ -100,7 +107,7 @@
     }
 
     p {
-      margin: 1.45rem 0 2rem;
+      margin: 0 0 1rem;
       color: var(--muted);
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       line-height: 1.65;
@@ -141,7 +148,7 @@
       font-weight: 750;
     }
 
-    .contact { margin-top: 2.75rem; }
+    .contact { margin-top: 1.5rem; }
     .contact h2 { margin: 0; font-size: 1rem; }
     .contact p { margin: .4rem 0 0; font-size: 1rem; overflow-wrap: anywhere; }
   </style>
@@ -153,24 +160,24 @@
       <a class="linkedin" href="https://www.linkedin.com/in/nitin-vunnam/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><span aria-hidden="true">in</span></a>
     </header>
     <main>
-      <div>
-        <div class="hero">
-          <div>
-            <h1>Nitin Vunnam</h1>
-            <p class="affiliation">Electrical and Computer Engineering @ UT Austin</p>
-          </div>
-          <img class="portrait" src="./portrait.jpg" alt="Portrait of Nitin Vunnam" width="800" height="800">
+      <div class="hero">
+        <div class="heading">
+          <h1>Nitin Vunnam</h1>
+          <p class="affiliation">Electrical and Computer Engineering @ UT Austin</p>
         </div>
-        <p>Take a look at what I’m working on and what I’ve done.</p>
-        <nav class="links" aria-label="Personal links">
-          <a href="./Nitin_Vunnam_resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (opens in a new tab)">Resume <span aria-hidden="true">&#8599;</span></a>
-          <a href="https://github.com/nitinvunnam" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">GitHub <span aria-hidden="true">&#8599;</span></a>
-          <a href="https://www.linkedin.com/in/nitin-vunnam/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">LinkedIn <span aria-hidden="true">&#8599;</span></a>
-        </nav>
-        <section class="contact" aria-labelledby="contact-heading">
-          <h2 id="contact-heading">Contact</h2>
-          <p>nitinvunnam06 [at] gmail [dot] com</p>
-        </section>
+        <img class="portrait" src="./portrait.jpg" alt="Portrait of Nitin Vunnam" width="800" height="800">
+        <div class="details">
+          <p>Take a look at what I’m working on and what I’ve done.</p>
+          <nav class="links" aria-label="Personal links">
+            <a href="./Nitin_Vunnam_resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (opens in a new tab)">Resume <span aria-hidden="true">&#8599;</span></a>
+            <a href="https://github.com/nitinvunnam" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">GitHub <span aria-hidden="true">&#8599;</span></a>
+            <a href="https://www.linkedin.com/in/nitin-vunnam/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">LinkedIn <span aria-hidden="true">&#8599;</span></a>
+          </nav>
+          <section class="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <p>nitinvunnam06 [at] gmail [dot] com</p>
+          </section>
+        </div>
       </div>
     </main>
     <footer><span>&copy; Nitin Vunnam</span></footer>
